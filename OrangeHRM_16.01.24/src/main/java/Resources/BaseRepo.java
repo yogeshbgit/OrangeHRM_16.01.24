@@ -13,7 +13,7 @@ public class BaseRepo {
 	public WebDriver driver;
 	Properties pro;
 	
-	public void setup() throws IOException
+	public WebDriver initialize() throws IOException
 	{
 		
 		pro = new Properties();
@@ -25,9 +25,11 @@ public class BaseRepo {
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			driver.get(url);
 			driver.manage().window().maximize();
 					
 		}
+		return driver;
 	}
 
 }
