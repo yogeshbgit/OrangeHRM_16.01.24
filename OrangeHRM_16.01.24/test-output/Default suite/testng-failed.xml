@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="LoginPageTest.LoginPageTest">
+      <class name="LoginPageTest.PIMTest">
         <methods>
           <include name="setup"/>
-          <include name="validateLogin"/>
-          <include name="browserCloser"/>
+          <include name="validateEmploySearchList"/>
         </methods>
-      </class> <!-- LoginPageTest.LoginPageTest -->
+      </class> <!-- LoginPageTest.PIMTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

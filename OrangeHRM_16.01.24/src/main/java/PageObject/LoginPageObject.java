@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPageObject {
 
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public LoginPageObject(WebDriver driver)
 	{
@@ -16,9 +16,24 @@ public class LoginPageObject {
 		PageFactory.initElements(driver, this);
 	}
 	
-/*	By userName =  By.xpath("//input[@placeholder='Username']");
-	By password = By.xpath("//input[@placeholder='Password']");
-	By loginbutton = By.xpath("//button[@type='submit']");*/
+
+	@FindBy(xpath="//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']")
+	WebElement loginText;
+	
+	@FindBy(xpath="//img[@alt='company-branding']")
+	WebElement companyBrandingLogo;
+	
+	@FindBy(xpath="//img[@alt='orangehrm-logo']")
+	WebElement orangehrmLogo;
+
+	
+	@FindBy(xpath="(//label[@class='oxd-label'])[1]")
+	WebElement usernameLabel;
+	 
+	@FindBy(xpath="(//label[@class='oxd-label'])[2]")
+	WebElement passwordLabel;
+	
+	
 	
 	
 	@FindBy(xpath="//input[@placeholder='Username']")
@@ -30,15 +45,51 @@ public class LoginPageObject {
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement login;
 	
+	@FindBy(xpath="//p[contains(.,'Username')]")
+	WebElement getuserName;
+	
+	@FindBy(xpath="//p[contains(.,'Password')]")
+	WebElement getpassword;
 
+	public String getLoginText()
+	{
+		return loginText.getText();
+		 
+	}
+	
+	public String getCompanyBrandingLogo()
+	{
+		return companyBrandingLogo.getAttribute("src");
+	}
+	
+	public String getOrangehrmLogo()
+	{
+	  return orangehrmLogo.getAttribute("src");
+	}
+	
+	public String getusernameLabel()
+	{
+		return usernameLabel.getText();
+	}
+	
+	public String getpasswordLabel()
+	{
+		return passwordLabel.getText();
+	}
+	
+	
+	
+	
 	public void enterUserName()
 	{
-		userName.sendKeys("Admin");
+		String sysUserName = getuserName.getText().split(":")[1].trim();
+		userName.sendKeys(sysUserName);
 	}
 	
 	public void enterPassword()
 	{
-		password.sendKeys("admin123");
+		String sysPassword = getpassword.getText().split(":")[1].trim();
+		password.sendKeys(sysPassword);
 	}
 
 	public void clickOnLogin()
