@@ -16,13 +16,13 @@ public class LoginPageTest extends BaseRepo{
 	public void setup() throws IOException
 	{
 		driver= initialize();
-		lpo = new LoginPageObject(driver);
+		
 	}
 	
 	@Test(priority=0)
-	public void validateLogin()
+	public void validateLogin() throws InterruptedException
 	{
-		
+		lpo = new LoginPageObject(driver);
 		lpo.enterUserName();
 		lpo.enterPassword();
 		lpo.clickOnLogin();
@@ -31,7 +31,7 @@ public class LoginPageTest extends BaseRepo{
 	@AfterTest()
 	public void browserCloser()
 	{
-		//driver.close();
+		driver.close();
 	}
 
 }

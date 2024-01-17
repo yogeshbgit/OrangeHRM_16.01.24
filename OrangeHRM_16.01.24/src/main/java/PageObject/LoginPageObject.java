@@ -13,36 +13,36 @@ public class LoginPageObject {
 	public LoginPageObject(WebDriver driver)
 	{
 		this.driver=driver;
-		//PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);
 	}
 	
-	By userName =  By.xpath("//input[@placeholder='Username']");
+/*	By userName =  By.xpath("//input[@placeholder='Username']");
 	By password = By.xpath("//input[@placeholder='Password']");
-	By loginbutton = By.xpath("//button[@type='submit']");
+	By loginbutton = By.xpath("//button[@type='submit']");*/
 	
 	
-/*	@FindBy(xpath="//input[@name='username']")
+	@FindBy(xpath="//input[@placeholder='Username']")
 	WebElement userName;
 	
-	@FindBy(xpath="//input[@name='password']")
+	@FindBy(xpath="//input[@placeholder='Password']")
 	WebElement password;
 	
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement login;
-	*/
+	
 
 	public void enterUserName()
 	{
-		driver.findElement(userName).sendKeys("Admin");
+		userName.sendKeys("Admin");
 	}
 	
 	public void enterPassword()
 	{
-		driver.findElement(password).sendKeys("admin123");
+		password.sendKeys("admin123");
 	}
 
 	public void clickOnLogin()
 	{
-		driver.findElement(loginbutton).click();
+		login.click();
 	}
 }
