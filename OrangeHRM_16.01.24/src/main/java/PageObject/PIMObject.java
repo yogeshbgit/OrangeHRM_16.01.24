@@ -27,9 +27,12 @@ public class PIMObject {
 	@FindBy(xpath="//div[@role='listbox']/div/span")
 	List<WebElement> supervisorList;
 	
-	@FindBy(xpath="//div[@class='oxd-table-cell oxd-padding-cell'][3]")
+	@FindBy(xpath="//div[@class='oxd-table-cell oxd-padding-cell'][8]")
 	List<WebElement> availableSupervisorList;
 
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement searchButton;
+	
 	public void clickOnPIM()
 	{
 		pim.click();
@@ -56,5 +59,10 @@ public class PIMObject {
 	public List<WebElement> getSupervisorList()
 	{
 		return supervisorList;
+	}
+	
+	public void clickOnSearchButton()
+	{
+		searchButton.click();
 	}
 }

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-17T19:37:09 IST" name="Default suite" finished-at="2024-01-17T19:37:33 IST" duration-ms="23454">
+  <suite started-at="2024-01-19T20:56:38 IST" name="Default suite" finished-at="2024-01-19T20:56:56 IST" duration-ms="17821">
     <groups>
     </groups>
-    <test started-at="2024-01-17T19:37:09 IST" name="Default test" finished-at="2024-01-17T19:37:33 IST" duration-ms="23454">
+    <test started-at="2024-01-19T20:56:38 IST" name="Default test" finished-at="2024-01-19T20:56:56 IST" duration-ms="17821">
       <class name="LoginPageTest.PIMTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:LoginPageTest.PIMTest@62150f9e]" started-at="2024-01-17T19:37:09 IST" name="setup" finished-at="2024-01-17T19:37:27 IST" duration-ms="17891" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:LoginPageTest.PIMTest@62150f9e]" started-at="2024-01-19T20:56:38 IST" name="setup" finished-at="2024-01-19T20:56:49 IST" duration-ms="11305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validateEmploySearchList()[pri:0, instance:LoginPageTest.PIMTest@62150f9e]" started-at="2024-01-17T19:37:27 IST" name="validateEmploySearchList" finished-at="2024-01-17T19:37:33 IST" duration-ms="5487" status="PASS">
+        <test-method signature="validateEmploySearchList()[pri:0, instance:LoginPageTest.PIMTest@62150f9e]" started-at="2024-01-19T20:56:49 IST" name="validateEmploySearchList" finished-at="2024-01-19T20:56:56 IST" duration-ms="6410" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateEmploySearchList -->

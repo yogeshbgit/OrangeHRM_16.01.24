@@ -22,30 +22,31 @@ public class PIMTest extends BaseRepo {
 		driver = initialize();
 		login();
 	}
-	
+	 
 	@Test(priority=0)
-	public void validateEmploySearchList() throws InterruptedException
+	public void validateSupervisorSearch() throws InterruptedException
 	{
 		pim = new PIMObject(driver);
 		pim.clickOnPIM();
 		List<String>availableSupervisorList = pim.getAvailableSupervisorList();
-		int supervisorIndex = availableSupervisorList.size()-1;
+		int supervisorIndex = availableSupervisorList.size()-3;
 		System.out.println("available list size:"+availableSupervisorList.size());
+		String serachedSupervisor = "";
 		if(availableSupervisorList.size()>0)
 		{
 			for(int i=0;i<availableSupervisorList.size();i++)
 			{
-				i=supervisorIndex;
+				i=supervisorIndex; 
 				pim.enterSupervisorName(availableSupervisorList.get(i));
-				Thread.sleep(1000);
+				Thread.sleep(2000);
+				serachedSupervisor=availableSupervisorList.get(i);
+				System.out.println("serached Supervisor:"+serachedSupervisor);
 				List<WebElement> list = pim.getSupervisorList();
 				boolean result = false;
 				for(int j=0;j<list.size();j++)
 				{
 					if(list.get(j).getText().contains(availableSupervisorList.get(i)))
 					{
-						
-						System.out.println("serached Supervisor:"+availableSupervisorList.get(i));
 						System.out.println("Selected Supervisor:"+list.get(j).getText());
 						list.get(j).click();
 						result = true;
@@ -60,9 +61,39 @@ public class PIMTest extends BaseRepo {
 		}
 		else
 		{
-			System.out.println("No List Found");
+			System.out.println("No Record Found");
 			Assert.assertTrue(false);
 		}
+		
+		pim.clickOnSearchButton();
+		List<String> afterSearchList  = pim.getAvailableSupervisorList();
+		if(afterSearchList.size()>0)
+		{
+			for(String n:afterSearchList)
+			{
+			
+				if(n.equals(serachedSupervisor))
+				{
+					System.out.println("After Search List Supervisor:"+n);
+					
+				}
+				else
+				{
+					System.out.println("No Record Found");
+					Assert.assertTrue(false);
+				}
+			
+			}
+		}
+		else
+		{
+			System.out.println("After Search : No Record Found");
+		
+		}
+			
+		
+		
+		
 		
 		
 	}
